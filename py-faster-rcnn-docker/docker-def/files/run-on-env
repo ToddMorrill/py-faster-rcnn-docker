@@ -1,3 +1,0 @@
-#!/bin/bash
-source activate py-faster-r-cnn 2> /dev/null || source activate py-faster-r-cnn
-"$@"

@@ -35,10 +35,17 @@ WORKDIR /root/py-faster-rcnn
 # Checking out just particular commit
 RUN git fetch && git checkout d6722736f869386fa42af6c2f1e04249d9c7cdd1
 COPY files/Makefile-${cpu_or_gpu}.config caffe-fast-rcnn/Makefile.config
+WORKDIR /root/py-faster-rcnn
+COPY files/demo.ipynb tools/
 WORKDIR /root/py-faster-rcnn/caffe-fast-rcnn
 RUN run-on-env make clean && run-on-env make proto && run-on-env make all -j8 && run-on-env make pycaffe
 WORKDIR /root/py-faster-rcnn/lib
 RUN run-on-env make
+WORKDIR /root/py-faster-rcnn/
+RUN data/scripts/fetch_faster_rcnn_models.sh
+RUN mkdir /etc/jupyter/ && jupyter notebook --generate-config
+RUN "c.NotebookApp.ip = '*'" >> /root/.jupyter/jupyter_notebook_config.py && "c.NotebookApp.token = ''" >> /root/.jupyter/jupyter_notebook_config.py &&
+mv /root/.jupyter/jupyter_notebook_config.py /etc/jupyter/
 
 
 # For solving caffe compilation problem with float128 see:

@@ -20,3 +20,4 @@ boost>=1.59.0
 glog>=0.3.4
 lmdb>=0.9.18
 ExifRead>=2.1.2
+jupyter>=1.0.0

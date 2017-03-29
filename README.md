@@ -1,9 +1,12 @@
-# 1) install docker (community edition) - https://docs.docker.com/engine/installation/linux/ubuntu/
+### 1) Install docker
+https://docs.docker.com/engine/installation/linux/ubuntu/
+```
 sudo apt-get install \ apt-transport-https \ ca-certificates \ curl \ software-properties-common
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo apt-key fingerprint 0EBFCD88
 sudo apt-get update
 sudo apt-get install docker-ce
+```
 
 To test docker run:
 sudo docker run hello-world

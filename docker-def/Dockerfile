@@ -44,8 +44,7 @@ RUN run-on-env make
 WORKDIR /root/py-faster-rcnn/
 RUN data/scripts/fetch_faster_rcnn_models.sh
 RUN mkdir /etc/jupyter/ && jupyter notebook --generate-config
-RUN "c.NotebookApp.ip = '*'" >> /root/.jupyter/jupyter_notebook_config.py && "c.NotebookApp.token = ''" >> /root/.jupyter/jupyter_notebook_config.py &&
-mv /root/.jupyter/jupyter_notebook_config.py /etc/jupyter/
+RUN echo "c.NotebookApp.ip = '*'" >> /root/.jupyter/jupyter_notebook_config.py && echo "c.NotebookApp.token = ''" >> /root/.jupyter/jupyter_notebook_config.py && mv /root/.jupyter/jupyter_notebook_config.py /etc/jupyter/
 
 
 # For solving caffe compilation problem with float128 see:

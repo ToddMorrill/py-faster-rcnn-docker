@@ -1,6 +1,7 @@
 ### 1) Install docker
 [Docker documentation](https://docs.docker.com/engine/installation/linux/ubuntu/)
-```sudo apt-get install \
+```
+sudo apt-get install \
   apt-transport-https \
   ca-certificates \
   curl \
@@ -12,7 +13,8 @@ sudo apt-get install docker-ce
 ```
 To test docker run `sudo docker run hello-world`
 [Configure docker to run as non-privileged user](https://docs.docker.com/engine/installation/linux/linux-postinstall/#manage-docker-as-a-non-root-user)
-```sudo groupadd docker
+```
+sudo groupadd docker
 sudo usermod -aG docker $USER
 docker run hello-world
 ```

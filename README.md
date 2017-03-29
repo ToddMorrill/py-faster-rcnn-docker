@@ -1,20 +1,21 @@
 ### 1) Install docker
 [Docker documentation](https://docs.docker.com/engine/installation/linux/ubuntu/)
-```
-sudo apt-get install \ apt-transport-https \ ca-certificates \ curl \ software-properties-common
+```sudo apt-get install \
+  apt-transport-https \
+  ca-certificates \
+  curl \
+  software-properties-common
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo apt-key fingerprint 0EBFCD88
 sudo apt-get update
 sudo apt-get install docker-ce
 ```
-
-To test docker run:
-sudo docker run hello-world
-# configure docker to run as non-privileged user
-#https://docs.docker.com/engine/installation/linux/linux-postinstall/#manage-docker-as-a-non-root-user
-sudo groupadd docker
+To test docker run `sudo docker run hello-world`
+[Configure docker to run as non-privileged user](https://docs.docker.com/engine/installation/linux/linux-postinstall/#manage-docker-as-a-non-root-user)
+```sudo groupadd docker
 sudo usermod -aG docker $USER
 docker run hello-world
+```
 
 
 2) install nvidia-docker - https://github.com/NVIDIA/nvidia-docker

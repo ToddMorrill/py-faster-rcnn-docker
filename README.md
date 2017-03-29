@@ -1,5 +1,5 @@
 ### 1) Install docker
-https://docs.docker.com/engine/installation/linux/ubuntu/
+[Docker documentation](https://docs.docker.com/engine/installation/linux/ubuntu/)
 ```
 sudo apt-get install \ apt-transport-https \ ca-certificates \ curl \ software-properties-common
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -

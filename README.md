@@ -20,7 +20,7 @@ docker run hello-world
 ```
 
 ### 2) [Install nvidia-docker](https://github.com/NVIDIA/nvidia-docker)
-This allows Docker to find your GPU(s).
+This allows Docker to find your GPU(s)
 Note: nvidia-docker requires NVIDIA drivers. Howevever, if you have CUDA installed, you already have the drivers.
 ```
 wget -P /tmp https://github.com/NVIDIA/nvidia-docker/releases/download/v1.0.1/nvidia-docker_1.0.1-1_amd64.deb
